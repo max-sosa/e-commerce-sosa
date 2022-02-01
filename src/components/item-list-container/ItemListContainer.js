@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Item from "../item";
+import ItemCounter from "../ItemCounter";
 
 const items = [
   { id: "1", name: "iPhone X", price: "999.99", createdBy: "Apple"},
@@ -19,6 +20,7 @@ const ItemListContainer = () => {
         <p>{selectedItem ? selectedItem.name : "Ninguno"}</p>
         <p>{selectedItem ? selectedItem.price : "Ninguno"}</p>
         <p>{selectedItem ? selectedItem.id : "Ninguno"}</p>
+        <ItemCounter/>
       </div>
       {items.map(({ id, name, price }) => (
         <Item

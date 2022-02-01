@@ -4,7 +4,7 @@ const Item = ({ name, price, id, setSelectedItem, image }) => {
   const selectItem = () => setSelectedItem({ name, price, id});
 
   return (
-    <>
+  <div>
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src=" "/>
         <Card.Body>
@@ -15,8 +15,7 @@ const Item = ({ name, price, id, setSelectedItem, image }) => {
             <Button variant="success" onClick={selectItem}>Seleccionar producto</Button>
         </Card.Body>
         </Card>
-    </>
-    
+  </div>
   );
 };
 
