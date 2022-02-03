@@ -1,6 +1,7 @@
 import { Card, Button } from "react-bootstrap";
+import ItemCounter from "./ItemCounter";
 
-const Item = ({ name, price, id, setSelectedItem, image }) => {
+const Item = ({ name, price, id, setSelectedItem, stock }) => {
   const selectItem = () => setSelectedItem({ name, price, id});
 
   return (
@@ -13,6 +14,7 @@ const Item = ({ name, price, id, setSelectedItem, image }) => {
                 Precio del producto: $ {price}
             </Card.Text>
             <Button variant="success" onClick={selectItem}>Seleccionar producto</Button>
+            <ItemCounter stock={stock} />
         </Card.Body>
         </Card>
   </div>
