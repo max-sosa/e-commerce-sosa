@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-const ItemCounter = ({ stock }) => {
+const ItemCounter = ({ stock, onAdd }) => {
   const [counter, setCounter] = useState(1);
 
   const minusCounter = () => {
@@ -20,6 +20,8 @@ const ItemCounter = ({ stock }) => {
         <Button variant="outline-success" onClick={minusCounter}>-</Button>
         <span style={{padding:'1rem'}}>{counter}</span>
         <Button variant="outline-success" onClick={plusCounter}>+</Button>
+        <br></br>
+        <Button onClick={()=> onAdd(alert(`Estas ingresando en el carrito ${counter} vehiculo/s.`))} disabled={counter < 1 && 'disabled'} variant='outline-success' className='m-2'>Agregar al Carrito</Button>
       </div>
     </>
   );

@@ -17,7 +17,7 @@ const Item = ({ prod }) => {
                 <br></br>
                 Precio:$ {price}
               </Card.Text>
-              
+        
               <Button variant="success" style={{margin:'0.5rem'}}>Ver detalle</Button>
               <ItemCounter stock={stock} />
             </Card.Body>
