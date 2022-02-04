@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import ItemCounter from "./ItemCounter";
 
 const Item = ({ prod }) => {
-  const {id, image, name, price, category, stock} = prod;
+  const {id, image, name, price, category,model, stock} = prod;
 
   return (
       <Card style={{ width: '18rem', margin: '1rem'}}>
@@ -12,6 +12,8 @@ const Item = ({ prod }) => {
             <Card.Title>{name}</Card.Title>
             <Card.Text>
                 Categoria: {category}
+                <br></br>
+                Modelo: {model}
                 <br></br>
                 Precio:$ {price}
             </Card.Text>
