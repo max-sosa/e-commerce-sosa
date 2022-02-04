@@ -18,7 +18,7 @@ const ItemCounter = ({ stock }) => {
     <>
       <div>
         <Button variant="outline-success" onClick={minusCounter}>-</Button>
-        <span>       {counter}      </span>
+        <span style={{padding:'1rem'}}>{counter}</span>
         <Button variant="outline-success" onClick={plusCounter}>+</Button>
       </div>
     </>

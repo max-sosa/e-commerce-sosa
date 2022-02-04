@@ -6,7 +6,7 @@ const NavBar = () => {
         <>
             <Navbar bg="light"  expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Fast Food E-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="#home">Westen Car E-Commerce</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
