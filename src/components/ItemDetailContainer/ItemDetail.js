@@ -5,7 +5,7 @@ import ItemCounter from "../ItemCounter";
 const ItemDetail = ({product}) => {
     const [show, setShow] = useState(true);
 
-    const {image, description, name, price, category, stock} = product;
+    const {image, name, price, category, stock} = product;
 
     const onAdd = (contador)=> {
         setShow(false);
@@ -19,8 +19,7 @@ const ItemDetail = ({product}) => {
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                        {description}
-                        Categoria: {categoria}
+                        Categoria: {category}
                     </Card.Text>
             
                     <Card.Text>
