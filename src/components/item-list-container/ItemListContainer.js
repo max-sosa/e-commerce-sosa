@@ -1,30 +1,21 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getMock } from "../helpers/mock";
-import ItemList from "../ItemList";
-import Bspinner from "./Spinner";
-
+import Item from "../Item";
+import useProducts from "../../hooks/useProducts";
 
 const ItemListContainer = () => {
+  const { id } = useParams();
+  const { products } = useProducts();
 
-  const {id} = useParams();
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect (()=>{
-    getMock
-      .then(res=>setData(res))
-      .catch(err=> console.log(err))
-      .finally(()=> setLoading(false))
-  },[])
-
-  const filterProducts = data.filter(({category})=> category === id); 
+  const filterProducts = products.filter(({ category }) => category === id);
 
   return (
-    <div >
-      {loading ? <Bspinner/> : !id && <ItemList productos={data}/>}
-      {id && <ItemList productos={filterProducts}/>}
+    <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center" style={{display:'flex', margin:'1rem'}}>
+      {!id && products.map((products) => {
+          return <Item key={products.id} {...products} />;
+        })}
+      {id && filterProducts.map((products) => {
+          return <Item key={products.id} {...products} />;
+        })}
     </div>
   );
 };

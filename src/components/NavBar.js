@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <>
             <Navbar bg="light"  expand="lg">
-                <Container>
+                <Container className="text-success">
                     <Navbar.Brand>
                         <Link to="/">Westen Car Shop</Link>
                     </Navbar.Brand>

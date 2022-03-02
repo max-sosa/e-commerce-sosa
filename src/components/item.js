@@ -1,12 +1,14 @@
-import React from "react";
+import {useState} from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCounter from "./ItemCounter";
 
 
-const Item = ({ prod }) => {
-  const {id, image, name, price, category, model, stock} = prod;
+const Item = ({id, image, name, price, category, model, stock}) => {
+  const [stockSelected, setStockSelected] = useState(0);
 
   return (
+    <>
            <Card style={{ width: '18rem', margin:'0.5rem'}}>
             <Card.Img variant="top" src={image}/>
             <Card.Body>
@@ -18,10 +20,11 @@ const Item = ({ prod }) => {
                 <br></br>
                 Precio:$ {price}
               </Card.Text>
-              <Button variant="success" style={{margin:'0.5rem'}}>Ver detalle</Button> 
-              <ItemCounter stock={stock} />
+              <Button variant="outline-dark" style={{margin:'0.5rem'}}><Link to={`/item/${id}`}> Ver detalle </Link></Button> 
+              <ItemCounter stock={stock} setStockSelected={setStockSelected}/>
             </Card.Body>
           </Card>
+    </>
   );
 };
 
